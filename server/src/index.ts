@@ -2,10 +2,15 @@ import express from 'express'
 import databaseService from './services/database.services'
 import { config } from 'dotenv'
 import userRouter from './routes/users.routes'
+import cors from 'cors'
 config()
+
 const app = express()
+
 databaseService.connect()
 app.use(express.json())
+app.use(cors())
+
 app.use('/users', userRouter)
 
 app.listen(process.env.PORT, () => {
