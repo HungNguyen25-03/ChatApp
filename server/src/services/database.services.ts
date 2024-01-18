@@ -2,7 +2,7 @@ import { Collection, Db, MongoClient } from 'mongodb'
 import { config } from 'dotenv'
 import User from '~/model/schema/User.schema'
 config()
-const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@chatapp.etfacin.mongodb.net/?retryWrites=true&w=majority`
+const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.qr9nw.mongodb.net/?retryWrites=true&w=majority`
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 class DatabaseService {
   private client: MongoClient
