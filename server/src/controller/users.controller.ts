@@ -12,9 +12,10 @@ export const loginCotroller = async (req: Request, res: Response, next: NextFunc
   const user_id = user._id as ObjectId
   const result = await userService.login(user_id.toString())
 
-  return res.json({
+  return res.status(200).json({
     message: USERS_MESSAGES.LOGIN_SUCCESS,
-    result: result
+    result: result,
+    status: 200
   })
 }
 
@@ -23,6 +24,7 @@ export const registerController = async (req: Request<ParamsDictionary, any, Reg
   console.log(result)
   return res.status(200).json({
     message: USERS_MESSAGES.REGISTER_SUCCESS,
-    result: result
+    result: result,
+    status: 200
   })
 }
