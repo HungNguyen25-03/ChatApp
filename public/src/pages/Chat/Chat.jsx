@@ -19,7 +19,7 @@ export default function Chat() {
 
   useEffect(() => {
     if (user) {
-      socket.current = io("http://localhost:4000");
+      socket.current = io(`${host}`);
       socket.current.on("connect", () => {
         console.log("Connected to server with ID:", socket.id);
       });
